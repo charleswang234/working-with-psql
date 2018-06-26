@@ -17,6 +17,7 @@ var knex = require('knex')({
 
 knex('famous_people').insert({first_name: addFamous[0], last_name: addFamous[1], birthdate: addFamous[2]})
 .asCallback(function() {
+  return knex.destroy();
 });
 
 // knex.select('*').from('famous_people')
